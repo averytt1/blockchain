@@ -29,6 +29,7 @@ func (k msgServer) Unjail(goCtx context.Context, msg *types.MsgUnjail) (*types.M
 	if valErr != nil {
 		return nil, valErr
 	}
+        //Release jail status
 	err := k.Keeper.Unjail(ctx, valAddr)
 	if err != nil {
 		return nil, err
